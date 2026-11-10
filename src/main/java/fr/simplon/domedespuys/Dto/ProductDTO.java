@@ -11,6 +11,6 @@ public class ProductDTO {
     private String label;
     private String description;
     private Long price;
-    private String brand;
-    private List<String> images;
+    private Long brandId;
+    private List<ImageDTO> images;
 }

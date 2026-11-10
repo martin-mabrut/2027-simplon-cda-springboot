@@ -10,5 +10,5 @@ import java.util.List;
 @Setter
 public class PurchasePostDTO {
     AddressDTO address;
-    List<PurchaseProduct> purchaseProducts;
+    List<PurchaseProductDTO> purchaseProductDto;
 }

@@ -3,9 +3,9 @@ package fr.simplon.domedespuys.Controller;
 import com.fasterxml.jackson.annotation.JsonView;
 import fr.simplon.domedespuys.Model.Brand;
 import fr.simplon.domedespuys.Model.Product;
-import fr.simplon.domedespuys.Model.Purchase;
+import fr.simplon.domedespuys.Repository.BrandRepository;
 import fr.simplon.domedespuys.Repository.ProductRepository;
-import fr.simplon.domedespuys.Repository.PurchaseRepository;
+import fr.simplon.domedespuys.View.BrandView;
 import fr.simplon.domedespuys.View.ProductView;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,17 +21,24 @@ import java.util.Optional;
 @RequestMapping("/api/product")
 public class ProductRestController {
 
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
     @GetMapping
     @JsonView(ProductView.ProductListView.class)
-    public List<Product> getProducts() { return this.productRepository.findAll(); }
+    public List<Product> getProducts() {
+        return productRepository.findAll();
+    }
+
+    @GetMapping("/slug/{slug}")
+    @JsonView(ProductView.ProductDetailView.class)
+    public Optional<Product> getBrandBySlug(@PathVariable String slug) {
+        return productRepository.findBySlug(slug);
+    }
 
     @GetMapping("/{id}")
-    public Optional<Product> getProduct(@PathVariable("id") Long id) {return this.productRepository.findById(id); }
-
-    @GetMapping("/purchase/{purchase}")
-    public List<Product> getProductsByPurchase(@PathVariable String purchase) {
-        return this.productRepository.findAllByPurchase(purchase);
+    @JsonView(ProductView.ProductDetailView.class)
+    public Optional<Product> getBrandById(@PathVariable String id) {
+        return productRepository.findById(Long.valueOf(id));
     }
+
 }

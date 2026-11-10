@@ -54,4 +54,14 @@ public class Product {
         this.images.add(image);
         image.setProduct(this);
     }
+
+    @JsonView(ProductView.MainImage.class)
+    public Image getMainImage() {
+        for (Image image : images) {
+            if (image.isDefault()) {
+                return image;
+            }
+        }
+        return null;
+    }
 }

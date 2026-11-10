@@ -10,8 +10,9 @@ public class ProductView {
     public interface CreatedAt {}
     public interface Brand {}
     public interface Images {}
+    public interface MainImage {}
 
-    public interface ProductListView extends Label,Price, Slug {}
-    public interface ProductDetailView extends ProductListView, Description, Brand, Images {}
+    public interface ProductListView extends Label, Price, MainImage, Slug {}
+    public interface ProductDetailView extends ProductListView, Description, Brand, BrandView.Label, BrandView.Slug, Images {}
 
 }

@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    public Optional<User> findUserByPurchase(@PathVariable String purchase);
+    public Optional<User> findUserByPurchases(@PathVariable String purchase);
 }

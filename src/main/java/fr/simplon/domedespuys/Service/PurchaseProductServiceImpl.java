@@ -8,5 +8,5 @@ import fr.simplon.domedespuys.Service.Interfaces.IPurchaseProductService;
 public class PurchaseProductServiceImpl implements IPurchaseProductService {
 
     @Override
-    public PurchaseProduct createPurchaseProduct(Purchase purchase, PurchaseProductDTO dto) {}
+    public PurchaseProduct createPurchaseProduct(Purchase purchase, PurchaseProductDTO dto) { return null; }
 }

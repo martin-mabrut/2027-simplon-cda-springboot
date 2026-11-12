@@ -29,7 +29,7 @@ public class UserRestController {
     }
 
     @GetMapping("/purchase/{purchase}")
-    public Optional<User> getUserByPurchase(@PathVariable String purchase) {
-        return this.userRepository.findUserByPurchase(purchase);
+    public Optional<User> getUserByPurchases(@PathVariable String purchase) {
+        return this.userRepository.findUserByPurchases(purchase);
     }
 }

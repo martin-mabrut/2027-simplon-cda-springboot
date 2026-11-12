@@ -9,14 +9,14 @@ import java.util.List;
 
 public class PurchaseServiceImpl implements IPurchaseService {
     @Override
-    public Purchase create(PurchasePostDTO dto) {}
+    public Purchase create(PurchasePostDTO dto) { return null; }
 
     @Override
-    public Purchase update(String id, PurchasePutDTO dto) {}
+    public Purchase update(String id, PurchasePutDTO dto) { return null; }
 
     @Override
-    public Purchase getById(String id) {}
+    public Purchase getById(String id) { return null; }
 
     @Override
-    public List<Purchase> getCollection() {}
+    public List<Purchase> getCollection() { return null; }
 }
